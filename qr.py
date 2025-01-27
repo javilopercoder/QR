@@ -1,8 +1,8 @@
 import qrcode
 from PIL import Image
 
-# URL de tu perfil de GitHub
-url = "https://tu.url"
+# URL de tu perfil que quieras que se abra al escanear el QR
+url = "https://github.com/javilopercoder" #Ejemplo
 
 # Generar el código QR
 qr = qrcode.QRCode(
@@ -18,7 +18,7 @@ qr.make(fit=True)
 qr_image = qr.make_image(fill_color="black", back_color="white").convert('RGB')
 
 # Cargar el logo de lo que quieras de fondo (asegúrate de tener un logo en PNG)
-logo_path = "imagenes/imagen_a_elegir.png"
+logo_path = "images/Github-Light.png"
 logo = Image.open(logo_path)
 
 # Redimensionar el logo para que se ajuste al centro del QR
@@ -33,5 +33,5 @@ logo_position = (
 qr_image.paste(logo, logo_position, mask=logo)
 
 # Guardar el QR personalizado
-qr_image.save("qr/elige_nombre_QR.png")
+qr_image.save("qr/Github_QR.png")
 print("Código QR generado y guardado")
